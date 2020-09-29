@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/sprites/misc/potion-red/potion-red-1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/DavidLibre-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.231373 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 31.9628
+margin_top = 31.9628
+margin_right = 447.963
+margin_bottom = 108.963
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PotionIon" type="TextureRect" parent="Panel"]
+margin_left = 23.0105
+margin_top = 17.6788
+margin_right = 63.0105
+margin_bottom = 57.6788
+texture = ExtResource( 1 )
+stretch_mode = 1
+
+[node name="X" type="Label" parent="."]
+margin_left = 96.2511
+margin_top = 67.9089
+margin_right = 136.251
+margin_bottom = 81.9089
+custom_fonts/font = SubResource( 2 )
+text = "X"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PotionCounter" type="Label" parent="."]
+margin_left = 137.205
+margin_top = 60.7555
+margin_right = 183.205
+margin_bottom = 90.7555
+custom_fonts/font = SubResource( 3 )
+text = "##"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

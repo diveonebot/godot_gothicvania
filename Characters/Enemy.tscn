@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/sprites/enemies/skeleton/skeleton-2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sprites/enemies/skeleton/skeleton-4.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sprites/enemies/skeleton/skeleton-3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sprites/enemies/skeleton/skeleton-6.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sprites/enemies/skeleton/skeleton-5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/sprites/enemies/skeleton/skeleton-1.png" type="Texture" id=6]
+[ext_resource path="res://Characters/Enemy.gd" type="Script" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 23.8857 )
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 55
+script = ExtResource( 7 )
+__meta__ = {
+"_editor_description_": "Hostile NPC"
+}
+health = 5
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 8.61527 )
+shape = SubResource( 2 )
+
+[node name="PatrolBoundary" type="RayCast2D" parent="."]
+position = Vector2( 0, 8.61527 )
+enabled = true
+cast_to = Vector2( 0, 25 )
+collision_mask = 33

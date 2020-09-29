@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/sprites/misc/torch/torch-4.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sprites/misc/torch/torch-2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sprites/misc/torch/torch-1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sprites/misc/torch/torch-3.png" type="Texture" id=4]
+[ext_resource path="res://Props/AnimatedTorch.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "torch",
+"speed": 8.0
+} ]
+
+[node name="AnimatedTorch" type="AnimatedSprite"]
+position = Vector2( 330.032, 454.949 )
+frames = SubResource( 1 )
+animation = "torch"
+frame = 1
+playing = true
+script = ExtResource( 5 )
